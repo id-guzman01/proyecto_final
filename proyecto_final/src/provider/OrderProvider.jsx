@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import OrderContext from "../context/OrderContext";
+import ProductContext from "../context/ProductContext";
 
 const OrderProvider = ({children}) => {
     let [orders,setOrders] = useState([]);
     let [total,setTotal] = useState(0);
+
 
     useEffect(() => {
         cargarOrders();

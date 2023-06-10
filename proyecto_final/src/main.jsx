@@ -6,11 +6,10 @@ import ProductProvider from './provider/ProductProvider.jsx'
 import OrderProvider from './provider/OrderProvider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  
     <ProductProvider>
       <OrderProvider>
         <App />
       </OrderProvider>
-    </ProductProvider>
-  </React.StrictMode>,
+    </ProductProvider>,
 )

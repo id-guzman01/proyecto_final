@@ -6,6 +6,8 @@ const ProductProvider = ({children}) => {
     let [productos, setProductos] = useState([]);
     let [total,setTotal] = useState(0);
     let [promedio, setPromedio] = useState(0);
+    let [listPrice, setListPrice] = useState([]);
+
 
     useEffect(() => {
         cargarData();
@@ -13,6 +15,7 @@ const ProductProvider = ({children}) => {
             setProductos([]);
             setTotal(0);
             setPromedio(0);
+            setListPrice([]);
         });
     },[]);
 
@@ -23,6 +26,8 @@ const ProductProvider = ({children}) => {
             setProductos(productos = data);
             calcularPromedioPrecio(data);
             calcularTotalProductos(data);
+            priceProduct(data);
+
         })
         .catch((error) => console.error(error));
     }
@@ -40,9 +45,30 @@ const ProductProvider = ({children}) => {
             setPromedio(prom.toFixed(2));
     }
 
+    const priceProduct = (arreglo) => {
+
+        if(listPrice.length < productos.length){
+
+            arreglo.map((dato) => {
+
+                setListPrice(
+                    listPrice = [
+                        ...listPrice,
+                        {
+                            id: dato.id,
+                            price: dato.price,
+                        },
+                ]);
+                
+            });
+            
+        }
+        
+    }
+
 
     return (<>
-        <ProductContext.Provider value={{ productos, total, promedio }}>
+        <ProductContext.Provider value={{ productos, total, promedio, listPrice }}>
             {children}
         </ProductContext.Provider>
     </>);
