@@ -4,12 +4,12 @@ import ProductContext from "../context/ProductContext";
 
 const TotalProducto = () => {
 
-    let { productos  } = useContext(ProductContext);
+    let { productos, promedio  } = useContext(ProductContext);
 
     return(<>
 
         <section id={style.card_total}>
-            <h2 id={style.title_card_total}>Productos en venta</h2>
+            <h2 id={style.title_card_total}>Productos en el almacen</h2>
             <ul id={style.list_card_total}>
             {productos.map((productos) => (
                 <li className={style.element_list_total} key={productos.id}>
@@ -17,7 +17,7 @@ const TotalProducto = () => {
                 </li>
             ))}
             </ul>
-            <p id={style.total_products}>Total de productos en venta: <span>{productos.length}</span></p>
+            <p id={style.total_products}>Total de productos en el almacen: <span>{productos.length}</span></p>
         </section>
 
     </>);

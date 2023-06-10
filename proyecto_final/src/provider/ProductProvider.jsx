@@ -13,14 +13,14 @@ const ProductProvider = ({children}) => {
             .then((data)=> {setProductos(productos = data)})
             .catch((error) => console.error(error));
 
-            let prom = 0;
+            let suma = 0; let prom = 0;
             productos.map((productos) => {
-                prom += productos.price;
+                suma += productos.price;
             });
-            prom = prom/productos.length;
-            setPromedio(prom);
+            prom = suma/productos.length;
+            setPromedio(prom.toFixed(2));
 
-    },[]);
+    });
 
     return (<>
         <ProductContext.Provider value={{ productos, promedio }}>
