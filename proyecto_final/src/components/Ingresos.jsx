@@ -11,18 +11,18 @@ const Ingresos = () => {
 
     useEffect(() => {
 
-            let count = 0;
+        let count = 0;
             orders.map((datos) => {
                 datos.products.map((dato) =>{
-                    let elemento = listPrice.find((listPrice) => listPrice.id == dato.productId);
-                    count += elemento.price * dato.quantity;
-                });
+                let elemento = listPrice.find((listPrice) => listPrice.id == dato.productId);
+                count += elemento.price * dato.quantity;
             });
-            setIngreso(count.toFixed(2));
+        });
+        setIngreso(count.toFixed(2));
 
-            return (() => {
-                setIngreso(0);
-            });
+        return (() => {
+            setIngreso(0);
+        });
     });
 
     return (<>
