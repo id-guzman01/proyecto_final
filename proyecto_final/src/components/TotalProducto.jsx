@@ -4,7 +4,7 @@ import ProductContext from "../context/ProductContext";
 
 const TotalProducto = () => {
 
-    let { productos, promedio  } = useContext(ProductContext);
+    let { productos, total  } = useContext(ProductContext);
 
     return(<>
 
@@ -17,7 +17,7 @@ const TotalProducto = () => {
                 </li>
             ))}
             </ul>
-            <p id={style.total_products}>Total de productos en el almacen: <span>{productos.length}</span></p>
+            <p id={style.total_products}>Total de productos en el almacen: <span>{total}</span></p>
         </section>
 
     </>);

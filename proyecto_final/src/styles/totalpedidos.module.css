@@ -1,0 +1,58 @@
+#card_order_total{
+    width: 18%;
+    height: 120px;
+    background-color: #F4F0EB;
+    position: absolute;
+    top: 30%;
+    left: 39%;
+    border-radius: 5px;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+#title_total_order_card{
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#card_total_order_number{
+    margin-top: 10px;
+    text-align: center;
+    background-color: white;
+    width: 90%;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+    margin-left: 5%;
+}
+
+@media screen and (max-width: 720px) {
+    
+    #card_order_total{
+        width: 29%;
+        height: 105px;
+        left: 69%;
+    }
+
+    #title_total_order_card{
+        margin-top: 15px;
+        font-size: 21px;
+    }
+    
+    #card_total_order_number{
+        font-size: 17px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    #card_order_total{
+        top: 97.5%;
+        left: 53%;
+        width: 40%;
+    }
+
+}
