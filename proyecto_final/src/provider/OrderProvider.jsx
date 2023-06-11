@@ -6,6 +6,7 @@ const OrderProvider = ({children}) => {
     let [orders,setOrders] = useState([]);
     let [total,setTotal] = useState(0);
 
+    let [estadoOrder,setEstadoOrder] = useState(false);
 
     useEffect(() => {
         cargarOrders();
@@ -20,6 +21,9 @@ const OrderProvider = ({children}) => {
         .then((data)=>{
             setOrders(orders = data);
             calcularTotalPedidos(data);
+            if(orders){
+                setEstadoOrder(true);
+            }
         })
         .catch((error) => console.error(error));
     }
@@ -29,7 +33,7 @@ const OrderProvider = ({children}) => {
     }
 
     return (<>
-        <OrderContext.Provider value={{ orders, total }}>
+        <OrderContext.Provider value={{ orders, total, estadoOrder }}>
             {children}
         </OrderContext.Provider>
     </>);

@@ -3,15 +3,17 @@ import TotalProducto from './TotalProducto'
 import Promedio from "./Promedio";
 import TotalPedidos from "./TotalPedidos";
 import Ingresos from "./Ingresos";
+import Top from "./Top";
 
 const Dashboard = () => {
 
     return(<>
         <Navbar />
-        <TotalProducto />
+        {/*<TotalProducto />
         <Promedio />
         <TotalPedidos />
-        <Ingresos />
+        <Ingresos />*/}
+        <Top />
     </>);
 }
 

@@ -7,7 +7,9 @@ const ProductProvider = ({children}) => {
     let [total,setTotal] = useState(0);
     let [promedio, setPromedio] = useState(0);
     let [listPrice, setListPrice] = useState([]);
+    let [listName,setListName] = useState([]);
 
+    let [estadoProducto,setEstadoProducto] = useState(false);
 
     useEffect(() => {
         cargarData();
@@ -27,7 +29,10 @@ const ProductProvider = ({children}) => {
             calcularPromedioPrecio(data);
             calcularTotalProductos(data);
             priceProduct(data);
-
+            nameProduct(data);
+            if(listName){
+                setEstadoProducto(true);
+            }
         })
         .catch((error) => console.error(error));
     }
@@ -47,28 +52,41 @@ const ProductProvider = ({children}) => {
 
     const priceProduct = (arreglo) => {
 
-        if(listPrice.length < productos.length){
+        arreglo.map((dato) => {
 
-            arreglo.map((dato) => {
-
-                setListPrice(
-                    listPrice = [
-                        ...listPrice,
-                        {
-                            id: dato.id,
-                            price: dato.price,
-                        },
-                ]);
+            setListPrice(
+                listPrice = [
+                    ...listPrice,
+                    {
+                        id: dato.id,
+                        price: dato.price,
+                    },
+            ]);
                 
-            });
+        });
             
-        }
-        
+    }
+
+    const nameProduct = (arreglo) => {
+
+        arreglo.map((dato) => {
+
+            setListName(
+                listName = [
+                    ...listName,
+                    {
+                        id: dato.id,
+                        title: dato.title
+                    },
+            ]);
+                
+        });
+            
     }
 
 
     return (<>
-        <ProductContext.Provider value={{ productos, total, promedio, listPrice }}>
+        <ProductContext.Provider value={{ productos, total, promedio, listPrice, listName, estadoProducto }}>
             {children}
         </ProductContext.Provider>
     </>);
