@@ -4,21 +4,26 @@ import OrderContext from '../context/OrderContext'
 import { useContext, useEffect, useState } from 'react'
 
 const Ingresos = () => {
-    let { listPrice } = useContext(ProductContext);
-    let { orders } = useContext(OrderContext);
+    let { listPrice, estadoProducto } = useContext(ProductContext);
+    let { orders, estadoOrder } = useContext(OrderContext);
 
     let [ingreso,setIngreso] = useState(0);
 
     useEffect(() => {
 
-        let count = 0;
+        if(estadoProducto && estadoOrder){
+
+            let count = 0;
             orders.map((datos) => {
                 datos.products.map((dato) =>{
                 let elemento = listPrice.find((listPrice) => listPrice.id == dato.productId);
                 count += elemento.price * dato.quantity;
+                });
             });
-        });
-        setIngreso(count.toFixed(2));
+            setIngreso(count.toFixed(2));
+
+        }
+
 
         return (() => {
             setIngreso(0);

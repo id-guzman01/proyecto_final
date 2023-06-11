@@ -9,10 +9,10 @@ const Dashboard = () => {
 
     return(<>
         <Navbar />
-        {/*<TotalProducto />
+        <TotalProducto />
         <Promedio />
         <TotalPedidos />
-        <Ingresos />*/}
+        <Ingresos />
         <Top />
     </>);
 }
