@@ -28,8 +28,7 @@ const OrderProvider = ({children}) => {
         })
         .catch((error) => {
             alert('Error al cargar los datos, intente más tarde');
-            console.log(Hola);
-            setOrderError(true);
+            setErrorOrder(true);
         });
     }
 

@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import style from '../styles/navbar.module.css'
+import ShowContext from '../context/ShowContext'
 
 const Navbar = () => {
-
-    let [show,setShow] = useState(false);
+    const { show, setShow  } = useContext(ShowContext);
 
     return(<>
 
@@ -14,8 +14,14 @@ const Navbar = () => {
             </picture>
 
             <nav id={style.navbar}>
-                <a className={style.btn_navbar} href="#" title='Apartado de Dashboard'>Dashboard</a>
-                <a className={style.btn_navbar} href="#" title='Apartado de productos'>Productos</a>
+                <a className={style.btn_navbar} href="#" title='Apartado de Dashboard' onClick={(evento) => {
+                  evento.preventDefault();
+                  setShow('dashboard');  
+                }}>Dashboard</a>
+                <a className={style.btn_navbar} href="#" title='Apartado de productos' onClick={(evento) => {
+                    evento.preventDefault();
+                    setShow('productos');
+                }}>Productos</a>
             </nav>
 
 
