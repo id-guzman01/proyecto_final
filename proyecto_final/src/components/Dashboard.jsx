@@ -11,8 +11,21 @@ import { useContext } from "react";
 
 const Dashboard = () => {
 
-    const { productos, listName, estadoProducto  } = useContext(ProductContext);
-    const { orders } = useContext(OrderContext);
+    const { productos, listName, estadoProducto, errorProducto  } = useContext(ProductContext);
+    const { orders, errorOrder } = useContext(OrderContext);
+    
+    if(errorOrder || errorProducto){
+        return(<>
+            <section>
+                <Navbar />
+                <TotalProducto />
+                <Promedio />
+                <TotalPedidos />
+                <Ingresos />
+                <Top />
+            </section>
+        </>);
+    }
 
     return(<>
 

@@ -3,8 +3,8 @@
     height: 120px;
     background-color: #F4F0EB;
     position: absolute;
-    top: 12%;
-    left: 39%;
+    top: 15%;
+    left: 30%;
     border-radius: 5px;
     box-shadow:
     inset 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -33,7 +33,8 @@
     #card_promedio{
         width: 29%;
         height: 105px;
-        left: 69%;
+        left: 11.5%;
+        top: 38%;
     }
 
     #title_section_card{
@@ -50,9 +51,9 @@
 @media screen and (max-width: 480px) {
 
     #card_promedio{
-        top: 97.5%;
-        left: 8%;
-        width: 40%;
+        top: 35.5%;
+        left: 26.5%;
+        width: 50%;
     }
 
 }

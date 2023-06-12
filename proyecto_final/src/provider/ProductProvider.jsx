@@ -10,6 +10,7 @@ const ProductProvider = ({children}) => {
     let [listName,setListName] = useState([]);
 
     let [estadoProducto,setEstadoProducto] = useState(false);
+    let [errorProducto,setErrorProducto] = useState(false);
 
     useEffect(() => {
         cargarData();
@@ -34,7 +35,10 @@ const ProductProvider = ({children}) => {
                 setEstadoProducto(true);
             }
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+            alert('Error al cargar los datos, intente más tarde');
+            setErrorProducto(errorProducto = true);
+        });
     }
 
     const calcularTotalProductos = (arreglo) => {
@@ -86,7 +90,7 @@ const ProductProvider = ({children}) => {
 
 
     return (<>
-        <ProductContext.Provider value={{ productos, total, promedio, listPrice, listName, estadoProducto }}>
+        <ProductContext.Provider value={{ productos, total, promedio, listPrice, listName, estadoProducto, errorProducto }}>
             {children}
         </ProductContext.Provider>
     </>);
