@@ -29,8 +29,8 @@ const Dashboard = () => {
 
         ) : (
 
-            <section id={style.preloader_3}>
-            </section>
+            <span id={style.preloader_3}>
+            </span>
 
         )}
 
