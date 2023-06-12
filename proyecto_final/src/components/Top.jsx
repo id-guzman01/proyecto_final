@@ -69,21 +69,28 @@ const Top = () => {
         array.map((array) => {
             if(array.count >= 3){
                 data[contador] = array.count;
-                label[contador] = array.title.substring(0,20);
+                label[contador] = array.title.substring(0,15);
                 contador++;
             }
         });
 
         }//Aquí finaliza el if
-        
-
 
 
     options = {
-        
+      responsive: true,
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+        },
+      },
         plugins: {
           legend: {
             position: 'top',
+            display: false,
           },
           title: {
             display: true,

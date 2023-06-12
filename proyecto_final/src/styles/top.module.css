@@ -9,3 +9,27 @@
     box-shadow:
     inset 0 -3em 3em rgba(0,0,0,0.1), 0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
+
+@media screen and (max-width:720px){
+    
+    #section_grafica_productos{
+        width: 83%;
+        height: 50%;
+        top: 98%;
+        left: 8%;
+    }    
+
+}
+
+
+@media screen and (max-width:480px){
+    
+    #section_grafica_productos{
+        width: 97%;
+        height: 35%;
+        top: 133%;
+        left: 1.5%;
+        font-size: 10px;
+    }    
+
+}
