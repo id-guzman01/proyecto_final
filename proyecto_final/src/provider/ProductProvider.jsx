@@ -34,9 +34,7 @@ const ProductProvider = ({children}) => {
                 setEstadoProducto(true);
             }
         })
-        .catch((error) => {
-            alert('Error al cargar los datos del API, intente más tarde');
-        });
+        .catch((error) => console.error(error));
     }
 
     const calcularTotalProductos = (arreglo) => {
