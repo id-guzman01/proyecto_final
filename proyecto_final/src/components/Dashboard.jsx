@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
 import TotalProducto from './TotalProducto'
 import Promedio from "./Promedio";
 import TotalPedidos from "./TotalPedidos";
@@ -17,7 +16,6 @@ const Dashboard = () => {
     if(errorOrder || errorProducto){
         return(<>
             <section>
-                <Navbar />
                 <TotalProducto />
                 <Promedio />
                 <TotalPedidos />
@@ -32,7 +30,6 @@ const Dashboard = () => {
         {( productos && listName && estadoProducto && orders ) ? (
 
             <section>
-                <Navbar />
                 <TotalProducto />
                 <Promedio />
                 <TotalPedidos />

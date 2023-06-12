@@ -16,7 +16,6 @@ const Navbar = () => {
             <nav id={style.navbar}>
                 <a className={style.btn_navbar} href="#" title='Apartado de Dashboard'>Dashboard</a>
                 <a className={style.btn_navbar} href="#" title='Apartado de productos'>Productos</a>
-                <a className={style.btn_navbar} href="#" title='Apartado de pedidos'>Pedidos</a>
             </nav>
 
 
