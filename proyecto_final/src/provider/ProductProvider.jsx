@@ -9,7 +9,6 @@ const ProductProvider = ({children}) => {
     let [listPrice, setListPrice] = useState([]);
     let [listName,setListName] = useState([]);
 
-    let [estadoProducto,setEstadoProducto] = useState(false);
     let [errorProducto,setErrorProducto] = useState(false);
 
     useEffect(() => {
@@ -31,9 +30,7 @@ const ProductProvider = ({children}) => {
             calcularTotalProductos(data);
             priceProduct(data);
             nameProduct(data);
-            if(listName){
-                setEstadoProducto(true);
-            }
+
         })
         .catch((error) => {
             alert('Error al cargar los datos, intente más tarde');
@@ -90,7 +87,7 @@ const ProductProvider = ({children}) => {
 
 
     return (<>
-        <ProductContext.Provider value={{ productos, total, promedio, listPrice, listName, estadoProducto, errorProducto }}>
+        <ProductContext.Provider value={{ productos, total, promedio, listPrice, listName, errorProducto }}>
             {children}
         </ProductContext.Provider>
     </>);

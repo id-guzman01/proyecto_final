@@ -25,8 +25,8 @@ import {
 
 
 const Top = () => {
-    const { listName, estadoProducto } = useContext(ProductContext);
-    const { orders, estadoOrder } = useContext(OrderContext);
+    const { listName } = useContext(ProductContext);
+    const { orders } = useContext(OrderContext);
     
     let [data,setData] = useState([]);
     let [label,setLabel] = useState([]);
@@ -34,7 +34,6 @@ const Top = () => {
     let [datos,setDatos] = useState([]);
 
 
-        if(estadoProducto && estadoOrder){
             let array = [];
             orders.map((ordenes) => {
                 ordenes.products.map((productos) => {
@@ -74,7 +73,7 @@ const Top = () => {
             }
         });
 
-        }//Aquí finaliza el if
+        
 
 
     options = {

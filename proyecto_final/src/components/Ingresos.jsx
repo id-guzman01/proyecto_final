@@ -4,14 +4,12 @@ import OrderContext from '../context/OrderContext'
 import { useContext, useEffect, useState } from 'react'
 
 const Ingresos = () => {
-    let { listPrice, estadoProducto } = useContext(ProductContext);
-    let { orders, estadoOrder } = useContext(OrderContext);
+    let { listPrice } = useContext(ProductContext);
+    let { orders } = useContext(OrderContext);
 
     let [ingreso,setIngreso] = useState(0);
 
     useEffect(() => {
-
-        if(estadoProducto && estadoOrder){
 
             let count = 0;
             orders.map((datos) => {
@@ -21,9 +19,6 @@ const Ingresos = () => {
                 });
             });
             setIngreso(count.toFixed(2));
-
-        }
-
 
         return (() => {
             setIngreso(0);
