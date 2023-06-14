@@ -9,7 +9,7 @@ const TotalProducto = () => {
     return(<>
 
         <section id={style.card_order_total}>
-            <h2 id={style.title_total_order_card}>Total Pedidos</h2>
+            <h2 id={style.title_total_order_card}>Total Productos</h2>
             <p id={style.card_total_order_number}>{total}</p>
         </section>
 

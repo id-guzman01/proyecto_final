@@ -6,7 +6,7 @@ import Top from "./Top";
 import style from '../styles/dashboard.module.css'
 import ProductContext from "../context/ProductContext";
 import OrderContext from "../context/OrderContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import ShowContext from '../context/ShowContext';
 
 const Dashboard = () => {
@@ -14,6 +14,16 @@ const Dashboard = () => {
     const { productos, errorProducto  } = useContext(ProductContext);
     const { orders, errorOrder } = useContext(OrderContext);
     const { show, setShow  } = useContext(ShowContext);
+
+    let [estado,setEstado] = useState(false);
+    useEffect(() => {
+        if(productos && orders){
+            setEstado(true);
+        }
+        return(() => {
+            setEstado(false);
+        });
+    });
     
     if (!show || show != "dashboard") {
         return null;
@@ -33,7 +43,7 @@ const Dashboard = () => {
 
     return(<>
 
-        {( productos && orders ) ? (
+        {( estado ) ? (
 
             <section>
                 <TotalProducto />
