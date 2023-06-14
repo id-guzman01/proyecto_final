@@ -11,7 +11,7 @@ import ShowContext from '../context/ShowContext';
 
 const Dashboard = () => {
 
-    const { productos, listName, errorProducto  } = useContext(ProductContext);
+    const { productos, errorProducto  } = useContext(ProductContext);
     const { orders, errorOrder } = useContext(OrderContext);
     const { show, setShow  } = useContext(ShowContext);
     
@@ -33,7 +33,7 @@ const Dashboard = () => {
 
     return(<>
 
-        {( productos && listName && orders ) ? (
+        {( productos && orders ) ? (
 
             <section>
                 <TotalProducto />
